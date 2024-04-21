@@ -1,10 +1,11 @@
-import React from 'react';
+import { Box, Typography } from '@mui/material';
+// import React from 'react';
 
-function Header(props) {
+function Header() {
     return (
-        <div>
-            <h1>Header</h1>
-        </div>
+        <Box component='header'>
+            <Typography variant='h2' color="primary">Header</Typography>
+        </Box>
     );
 }
 

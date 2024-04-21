@@ -1,56 +1,14 @@
 // import * as React from "react";
-// import useMediaQuery from "@mui/material/useMediaQuery";
-// import { makeStyles } from "@mui/system";
-// import { Button, Typography } from "@mui/material";
+
 import DefaultLayout from "./ui/layouts/defaultLayout";
 
-import "./App.css";
+// import "./App.css";
+import { Container } from "@mui/material";
 function App() {
-  // const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-
-  // const theme = React.useMemo(
-  //   () =>
-  //     createTheme({
-  //       palette: {
-  //         mode: prefersDarkMode ? "dark" : "light",
-  //       },
-  //     }),
-  //   [prefersDarkMode]
-  // );
-
-  // const useStyles = makeStyles({
-  //   root: {
-  //     background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-  //     border: 0,
-  //     borderRadius: 3,
-  //     boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
-  //     color: "white",
-  //     height: 48,
-  //     padding: "0 30px",
-  //   },
-  // });
-
-  // const classes = useStyles();
   return (
-    // <>
-    //   <Typography variant="h3" component="h3">
-    //     Hello Word !!!...
-    //   </Typography>
-    //   <Button
-    //     sx={{
-    //       background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-    //       border: 0,
-    //       borderRadius: 3,
-    //       boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
-    //       color: "white",
-    //       height: 48,
-    //       padding: "0 30px",
-    //     }}
-    //   >
-    //     Thanks you
-    //   </Button>
-    // </>
-    <DefaultLayout/>
+    <Container maxWidth="lg" sx={{bgcolor:"",display:'flex', flexDirection:"column" , minHeight:'100vh'}}>
+      <DefaultLayout />
+    </Container>
   );
 }
 export default App;
