@@ -1,11 +1,27 @@
-// import React from 'react';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-function router() {
-    return (
-        <div>
-            
-        </div>
-    );
+import DefaultLayout from "./ui/layouts/defaultLayout";
+import Dashboard from "./ui/pages/Dashboard";
+import About from "./ui/pages/About";
+
+const BrowserRoutes = createBrowserRouter([
+    {
+        path:"/",
+        element:<DefaultLayout/>,
+        children:[
+            {
+                path: "",
+                element: <Dashboard />,
+              },
+              {
+                path: "about",
+                element: <About />,
+              },
+        ]
+    }
+]);
+
+const Router = ()=>{
+    return <RouterProvider router={BrowserRoutes}/>;
 }
-
-export default router;
+export default Router;
