@@ -4,7 +4,7 @@ import { Box, Paper, Typography } from "@mui/material";
 function Footer() {
   return (
     <Box component="footer" bgcolor="primary.main" mt={1} borderRadius={1}>
-      <Typography variant="h5" textAlign="right" color="white" padding={1}>
+      <Typography variant="h5" textAlign="right" padding={1}>
         TMT Innovative Solutions Co.,ltd
       </Typography>
     </Box>

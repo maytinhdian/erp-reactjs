@@ -1,85 +1,47 @@
-import { createTheme } from "@mui/material";
+import { experimental_extendTheme as extendTheme } from "@mui/material/styles";
 
-const tmtLightBlue = "#218dbe";
-const tmtLightOrange = "#d3e956";
+const tmtLightBlue = "#0b1269";
+const tmtLightYellow = "#d4c819a6f";
 
-const tmtDarkBlue = "#04061a";
-const tmtDarkOrange = "#5e4a15";
-
-const LightTheme = createTheme({
-  palette: {
-    mode: "light",
-    common: {
-      blue: `${tmtLightBlue}`,
-      orange: `${tmtLightOrange}`,
+const theme = extendTheme({
+  colorSchemes: {
+    light: {
+      palette: {
+        common: {
+          black: "#111",
+          white: "#FFF",
+        },
+        primary: {
+          main: `${tmtLightBlue}`,
+        },
+        secondary: {
+          main: `${tmtLightYellow}`,
+        },
+        text: {
+          primary: "#FFF",
+        },
+      },
+      typography: {
+        allVariants: {
+          fontFamily: "'Montserrat', sans-serif",
+          textTransform: "none",
+        },
+        button: {
+          textTransform: "none",
+        },
+      },
     },
-    primary: {
-      main: tmtLightBlue,
-    },
-    secondary: {
-      main: tmtLightOrange,
-    },
-  },
-
-  typography: {
-    tabContainer: {
-      marginLeft: "auto",
-    },
-    tab: {
-      fontFamily: "Roboto",
-    },
-  },
-  components: {
-    MuiTab: {
-      styleOverrides: {
-        root: {
-          "&.Mui-selected": {
-            backgroundColor: tmtLightBlue,
-            color: tmtLightOrange,
-            borderRadius: "15px",
-          },
+    dark: {
+      palette: {
+        primary: {
+          main: "#ddc227",
+        },
+        text: {
+          primary: "#aa2727",
         },
       },
     },
   },
 });
 
-export default LightTheme;
-
-const DarkTheme = createTheme({
-  palette: {
-    mode: "light",
-    common: {
-      blue: `${tmtDarkBlue}`,
-      orange: `${tmtDarkOrange}`,
-    },
-    primary: {
-      main: tmtDarkBlue,
-    },
-    secondary: {
-      main: tmtDarkOrange,
-    },
-  },
-
-  typography: {
-    tabContainer: {
-      marginLeft: "auto",
-    },
-    tab: {
-      fontFamily: "Roboto",
-    },
-  },
-  components: {
-    MuiTab: {
-      styleOverrides: {
-        root: {
-          "&.Mui-selected": {
-            backgroundColor: tmtDarkBlue,
-            color: tmtDarkOrange,
-            borderRadius: "15px",
-          },
-        },
-      },
-    },
-  },
-});
+export default theme;

@@ -15,17 +15,18 @@ function NavigationBar() {
   const [selected, setSelected] = useState(0);
   return (
     <Tabs
+      textColor="inherit"
       value={selected}
       onChange={(_e, newValue) => setSelected(newValue)}
     >
-          {routes.map((route, index) => (
-          <Tab
-            key={`${route}${index}`}
-            component={Link}
-            to={route.link}
-            label={route.name}
-          />
-        ))}
+      {routes.map((route, index) => (
+        <Tab
+          key={`${route}${index}`}
+          component={Link}
+          to={route.link}
+          label={route.name}
+        />
+      ))}
     </Tabs>
   );
 }
