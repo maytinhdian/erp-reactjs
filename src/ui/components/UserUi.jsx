@@ -1,9 +1,11 @@
 import * as React from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { Avatar, Divider } from "@mui/material";
+import { Avatar, Divider, styled } from "@mui/material";
 import { Logout } from "@mui/icons-material";
-import { Box } from "@mui/system";
+import { unstable_styleFunctionSx } from "@mui/system";
+
+const UserProfileBox = styled("Box")(unstable_styleFunctionSx);
 
 export default function UserUi() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -16,7 +18,7 @@ export default function UserUi() {
   };
 
   return (
-    <Box>
+    <UserProfileBox>
       <Avatar
         id="basic-button"
         // aria-controls={open ? 'basic-menu' : undefined}
@@ -41,7 +43,7 @@ export default function UserUi() {
           Logout
         </MenuItem>
       </Menu>
-    </Box>
+    </UserProfileBox>
   );
 }
 

@@ -1,11 +1,12 @@
-import { AppBar, IconButton, Switch, Toolbar } from "@mui/material";
+import { AppBar, IconButton, Switch, Toolbar, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useColorScheme } from "@mui/material/styles";
+import NavigationBar from "../components/navbar/NavigationBar";
 
-import NavigationBar from "../components/NavigationBar";
 import UserUi from "../components/UserUi";
 import logo from "../../assets/react.svg";
 import { Box } from "@mui/system";
+import React from "react";
 
 function ModeToggle() {
   const { mode, setMode } = useColorScheme();
@@ -21,21 +22,31 @@ function ModeToggle() {
 }
 
 function Header() {
+  const theme = useTheme();
   return (
-    <AppBar color="primary">
-      <Toolbar variant="regular" sx={{ justifyContent: "space-between" }}>
-        <IconButton component={Link} to="/">
-          <img src={logo} alt="TMT Innovative Logo" />
-        </IconButton>
-        <Box>
-          <NavigationBar />
-        </Box>
-        <Box sx={{ display: "inline-flex", marginLeft: "auto" }}>
-          <ModeToggle />
-          <UserUi />
-        </Box>
-      </Toolbar>
-    </AppBar>
+    <React.Fragment>
+      <AppBar
+        sx={{
+          color: "primary",
+          position: "sticky",
+          borderRadius: "8px 8px 0px 0px ",
+        }}
+      >
+        <Toolbar variant="regular" sx={{ ...theme.mixins.toolbar }}>
+          <IconButton component={Link} to="/" sx={{ marginRight: "auto" }}>
+            <img src={logo} alt="TMT Innovative Logo" />
+          </IconButton>
+          <Box>
+            <NavigationBar />
+          </Box>
+          <Box sx={{ display: "inline-flex", marginLeft: "auto" }}>
+            <ModeToggle />
+            <UserUi />
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <div></div>
+    </React.Fragment>
   );
 }
 

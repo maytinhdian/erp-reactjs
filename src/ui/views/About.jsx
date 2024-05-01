@@ -1,5 +1,5 @@
-import { Toolbar, Typography } from "@mui/material";
-import { Box, Stack } from "@mui/system";
+import { Toolbar } from "@mui/material";
+import {  Stack } from "@mui/system";
 import React from "react";
 
 function About(props) {

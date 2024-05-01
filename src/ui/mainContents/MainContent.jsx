@@ -1,24 +1,14 @@
-import { Box, Button, Typography } from "@mui/material";
-
+import { styled } from "@mui/material";
+import { unstable_styleFunctionSx } from "@mui/system";
 import { Outlet } from "react-router-dom";
 
+const MainContentBox = styled("Box")(unstable_styleFunctionSx);
 function MainContent() {
   // const [activated, setActivated] = React.useState(false);
   return (
-    <Box component="main">
-      {/* <Typography variant="h1">Main contents</Typography> */}
+    <MainContentBox component="main" sx={{minHeight:'80vh',bgcolor:'grey.300'}}>
       <Outlet />
-      {/* <Button
-        onClick={() => setActivated(!activated)}
-        sx={{
-          bgcolor: activated ? "secondary.light" : "primary",
-          "&:hover": { backgroundColor: "secondary.main",color:"yellow" },
-        }}
-        variant="contained"
-      >
-        Thanks you
-      </Button> */}
-    </Box>
+    </MainContentBox>
   );
 }
 

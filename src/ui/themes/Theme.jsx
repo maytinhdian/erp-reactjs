@@ -1,33 +1,18 @@
 import { experimental_extendTheme as extendTheme } from "@mui/material/styles";
 
-const tmtLightBlue = "#0b1269";
-const tmtLightYellow = "#d4c819a6f";
+
+const tmtLightBlue = "#2196f3";
+const tmtLightYellow = "#e91e63";
 
 const theme = extendTheme({
   colorSchemes: {
     light: {
       palette: {
-        common: {
-          black: "#111",
-          white: "#FFF",
-        },
         primary: {
           main: `${tmtLightBlue}`,
         },
         secondary: {
           main: `${tmtLightYellow}`,
-        },
-        text: {
-          primary: "#FFF",
-        },
-      },
-      typography: {
-        allVariants: {
-          fontFamily: "'Montserrat', sans-serif",
-          textTransform: "none",
-        },
-        button: {
-          textTransform: "none",
         },
       },
     },
@@ -38,6 +23,34 @@ const theme = extendTheme({
         },
         text: {
           primary: "#aa2727",
+        },
+      },
+    },
+  },
+  components: {
+    MuiTabs: {
+      styleOverrides: {
+        indicator: ({ theme }) => {
+          return {
+            backgroundColor: theme.palette.secondary.main,
+          };
+        },
+        // indicator: ({ theme }) => ({
+        //   backgroundColor: theme.palette.secondary.main,
+        // }),
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          "&.Mui-selected": {
+            color: "#ffffff",
+          },
+          "&:not(.Mui-selected)": {
+            color: "#e0d3d3",
+          },
+          textTransform: "none",
+          fontSize: "1.1rem",
         },
       },
     },
