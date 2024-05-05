@@ -1,15 +1,7 @@
+import PropTypes from 'prop-types';
 import { Tab, Tabs } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-const routes = [
-  { name: "Home", link: "/", activeIndex: 0 },
-  { name: "Product", link: "/product", activeIndex: 1 },
-  { name: "Customer", link: "/customer", activeIndex: 2 },
-  { name: "Invoices", link: "/", activeIndex: 3 },
-  { name: "Quotation", link: "/", activeIndex: 4 },
-  { name: "About", link: "/about", activeIndex: 5 },
-];
 
 function a11yProps(index) {
   return {
@@ -18,7 +10,12 @@ function a11yProps(index) {
   };
 }
 
-function NavigationBar() {
+NavigationBar.propTypes = {
+  routes: PropTypes.object.isRequired
+};
+
+function NavigationBar(props) {
+  const routes = props.routes;
   const [selected, setSelected] = useState(0);
   return (
     <Tabs

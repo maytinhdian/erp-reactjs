@@ -3,7 +3,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import DefaultLayout from "./ui/layouts/defaultLayout";
 import Dashboard from "./ui/views/Dashboard";
 import About from "./ui/views/About";
-import Product from "./ui/views/Product";
+import Product from "./ui/views/products/Product";
 import Login from "./ui/views/Login";
 import SignUp from "./ui/views/SignUp";
 import GuestLayout from "./ui/layouts/guestLayout";
