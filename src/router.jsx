@@ -8,6 +8,7 @@ import Login from "./ui/views/Login";
 import SignUp from "./ui/views/SignUp";
 import GuestLayout from "./ui/layouts/guestLayout";
 import Customer from "./ui/views/customers/Customer";
+import Invoice from "./ui/views/invoices/Invoice";
 const BrowserRoutes = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,10 @@ const BrowserRoutes = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "invoice",
+        element: <Invoice />,
       },
       {
         path: "customer",

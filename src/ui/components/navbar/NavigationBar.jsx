@@ -11,7 +11,7 @@ function a11yProps(index) {
 }
 
 NavigationBar.propTypes = {
-  routes: PropTypes.object.isRequired
+  routes: PropTypes.array.isRequired
 };
 
 function NavigationBar(props) {

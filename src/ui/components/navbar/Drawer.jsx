@@ -11,7 +11,7 @@ import { MenuSharp } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 Drawer.propTypes = {
-  routes: PropTypes.object.isRequired,
+  routes: PropTypes.array.isRequired,
 };
 
 function Drawer(props) {

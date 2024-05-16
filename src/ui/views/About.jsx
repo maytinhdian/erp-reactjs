@@ -1,3 +1,4 @@
+
 import { Toolbar } from "@mui/material";
 import {  Stack } from "@mui/system";
 import React from "react";
@@ -16,6 +17,7 @@ function About(props) {
         <div style={{display:"flex",backgroundColor:"blue"}}>Div 1</div>
         <div>Div 2</div>
         <div>Div 3</div>
+        
       </Stack>
     </Toolbar>
   );

@@ -5,9 +5,7 @@ import { Container } from "@mui/material";
 
 function defaultLayout() {
   return (
-    <Container disableGutters
-      sx={{ display: "flex", flexDirection: "column",}}
-    >
+    <Container disableGutters sx={{ display: "flex", flexDirection: "column" }}>
       <Header />
       <MainContent />
       <Footer />

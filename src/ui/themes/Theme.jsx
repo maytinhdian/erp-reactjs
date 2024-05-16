@@ -1,6 +1,5 @@
 import { experimental_extendTheme as extendTheme } from "@mui/material/styles";
 
-
 const tmtLightBlue = "#2196f3";
 const tmtLightYellow = "#e91e63";
 
@@ -27,6 +26,7 @@ const theme = extendTheme({
       },
     },
   },
+
   components: {
     MuiTabs: {
       styleOverrides: {
@@ -49,7 +49,7 @@ const theme = extendTheme({
           "&:not(.Mui-selected)": {
             color: "#e0d3d3",
           },
-          textTransform: "none",
+          // textTransform: "none",
           fontSize: "1.1rem",
         },
       },
