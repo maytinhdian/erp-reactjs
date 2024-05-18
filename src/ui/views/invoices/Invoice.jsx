@@ -41,7 +41,6 @@ const StatUnit = styled('div', {
 const Stat = React.forwardRef(function Stat(inProps, ref) {
   const props = useThemeProps({ props: inProps, name: 'MuiStat' });
   const { value, unit, variant, ...other } = props;
-
   const ownerState = { ...props, variant };
 
   return (

@@ -13,6 +13,7 @@ import {
   Typography,
   styled,
 } from "@mui/material";
+import TmtTextField from "../../components/core/TmtTextField";
 
 const top100Films = [
   { label: "The Shawshank Redemption", year: 1994 },
@@ -72,56 +73,60 @@ function Product() {
             container
             columns={{ lg: 12, sm: 6, xs: 3 }}
             // sx={{ height: "5rem" }}
-            justifyContent="center"
+            justifyContent="start"
             alignItems="center"
             spacing={1}
             py={1}
             // m={1}
             boxSizing="border-box"
           >
-            <Grid item xs={4}>
-              <FormControl>
-                <FormLabel htmlFor="my-input">Nhóm sản phẩm</FormLabel>
-                <Autocomplete
-                  disablePortal
-                  id="combo-box-demo"
-                  options={top100Films}
-                  sx={{ width: 300 }}
-                  renderInput={(params) => (
-                    <TextField {...params}  />
-                  )}
-                  size="small"
-                />
-                <Input
-                  id="my-input"
-                  aria-describedby="my-helper-text"
-                  placeholder="Product name"
-                />
-                <FormHelperText id="my-helper-text">
-                  We'll never share your email.
-                </FormHelperText>
-              </FormControl>
+            <Grid item xs={6}>
+              <Typography
+                maxHeight="1.5rem"
+                border="1px solid"
+                textAlign="center"
+              >
+                Item 1
+              </Typography>
             </Grid>
             <Grid item xs={3}>
-              <Stack flexDirection="row" alignItems="center" gap={1}>
-                <Typography>Products</Typography>
-                <TextField id="product-name" size="small" />
+              <Stack
+                flexDirection="row"
+                // alignContent="center" B
+                display="flex"
+                alignItems="center"
+                gap={1}
+              >
+                <Typography>Item 2</Typography>
+                <TextField size="small" placeholder="Item 2">
+                  Item 2{" "}
+                </TextField>
               </Stack>
             </Grid>
-            <Grid item xs={4}>
-              <Stack flexDirection="row" alignItems="center" gap={1}>
-                <Typography>Products</Typography>
-                <TextField id="product-name" size="small" />
+            <Grid item xs={3} sx={{ justifyItems: "center" }}>
+              <Stack
+                flexDirection="row"
+                alignContent="center"
+                display="flex"
+                // maxHeight="1.5rem"
+                alignItems="end"
+                gap={1}
+              >
+                <Typography>Item 3</Typography>
+                <TextField size="small" />
               </Stack>
             </Grid>
-            <Grid item xs={8}>
-              <Item>xs=8</Item>
-            </Grid>
-            <Grid item xs={12}>
-              <Item>xs=8</Item>
-            </Grid>
-            <Grid item xs={8}>
-              <Item>xs=8</Item>
+            <Grid item xs={6} sx={{ justifyItems: "center" }}>
+              <Stack
+                flexDirection="row"
+                alignContent="center"
+                display="flex"
+                // maxHeight="1.5rem"
+                alignItems="end"
+                gap={1}
+              >
+                <TmtTextField size='small' label='Product name'/>
+              </Stack>
             </Grid>
           </Grid>
         </Paper>
