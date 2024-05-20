@@ -13,10 +13,12 @@ function MainContent() {
       component="main"
       sx={{
         display: "flex",
-        height: `calc(100vh - (${toolbar?.minHeight}px )*2)`,
-        justifyContent: "center",
-        alignItems: "center",
-        bgcolor: (theme) => theme.palette.grey[300],
+        height: `calc(100vh - (${toolbar?.minHeight}px )*2.5)`,
+        justifyContent: "start",
+        alignItems: "start",
+        bgcolor: (theme) => theme.palette.background.paper,
+        border: (theme) => theme.shape.borderRadius * 0.25,
+        my: (theme) => theme.spacing(0.5),
       }}
     >
       <Outlet />

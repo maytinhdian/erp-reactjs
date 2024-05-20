@@ -37,7 +37,7 @@ function Header() {
     <AppBar
       sx={{
         color: "primary",
-        position: "sticky",
+        position: "relative",
         borderRadius: "8px 8px 0px 0px ",
       }}
     >
