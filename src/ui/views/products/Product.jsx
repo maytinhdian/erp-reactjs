@@ -1,51 +1,37 @@
-import { Grid, Typography } from "@mui/material";
-import TextField from "../../components/core/TmtTextField"
+import {
+  Box,
+  Button,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import TextField from "../../components/core/TmtTextField";
+import TmtTextField from "../../components/core/TmtTextField";
 function Product() {
+  const isFullWidth = useMediaQuery((theme) => theme.breakpoints.only("sm"));
   return (
     <Grid
       container
-      columns={{ lg: 12, sm: 6, xs: 3 }}
-      justifyContent="start"
-      alignItems="center"
-      // spacing={1}
-      m={1}
-      boxSizing="border-box"
-      // border="1px solid "
-      borderRadius="5px"
-      sx={{ gap: (theme) => theme.spacing(2) }}
+      padding={1}
+      spacing={2}
+      direction={{ xs: "column", lg: "row" }}
+      justifyContent={{ xs: "center", lg: "left" }}
+      alignItems="flex-start"
     >
-      <Grid item xs={12}>
-        <Typography
-          textAlign="center"
-          textTransform="uppercase"
-          sx={{ color: (theme) => theme.palette.text.secondary }}
-          variant="h5"
-        >
-          Product Management
-        </Typography>
+      <Grid item xs={12} md={6} lg={4}>
+        <TmtTextField label="Tên sản phẩm" />
       </Grid>
-      <Grid item xs={4}>
-        <TextField label="Product Name"/>
+      <Grid item xs={12} md={6} lg={4}>
+        <TmtTextField label="Tên sản phẩm" />
       </Grid>
-      <Grid item xs={4}>
-        <Typography
-          textAlign="start"
-          // textTransform="uppercase"
-          sx={{ color: (theme) => theme.palette.text.secondary }}
-          variant="h6"
-        >
-          Product Management
-        </Typography>
+      <Grid item xs={12} md={6} lg={4}>
+        <TmtTextField label="Tên sản phẩm" />
       </Grid>
-      <Grid item xs={4}>
-        <Typography
-          textAlign="start"
-          // textTransform="uppercase"
-          sx={{ color: (theme) => theme.palette.text.secondary }}
-          variant="h6"
-        >
-          Product Management
-        </Typography>
+      <Grid item xs={12} md={6} lg={4} >
+        <Button fullWidth={true} variant="contained">
+          Save
+        </Button>
       </Grid>
     </Grid>
   );

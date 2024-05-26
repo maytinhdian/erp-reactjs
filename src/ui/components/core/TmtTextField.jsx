@@ -7,17 +7,18 @@ import {
   styled,
   useThemeProps,
 } from "@mui/material";
-import { boxSizing, maxWidth, width } from "@mui/system";
+import { boxSizing } from "@mui/system";
 
 const TextFieldRoot = styled(Box, {
   name: "TmtTextField",
   slot: "root",
 })(({ theme, ownerState }) => ({
   display: "flex",
-  [theme.breakpoints.up("md")]: {
+  [theme.breakpoints.up("lg")]: {
     flexDirection: "row",
     alignItems: "center",
-    // justifyContent: "center",
+    justifyContent: "flex-end",
+    boxSizing: "border-box",
     // padding: theme.spacing(1),
   },
   [theme.breakpoints.down("md")]: {
@@ -27,8 +28,9 @@ const TextFieldRoot = styled(Box, {
   },
   gap: theme.spacing(0.5),
 
-  backgroundColor: theme.palette.background.paper,
+  // backgroundColor: theme.palette.primary.light,
   borderRadius: theme.shape.borderRadius,
+
   // boxShadow: theme.shadows[2],
   // letterSpacing: "-0.025em",
 
@@ -42,9 +44,15 @@ const TextFieldLabel = styled(InputLabel, {
   name: "TmtTextField",
   slot: "label",
 })(({ theme }) => ({
+  [theme.breakpoints.up("lg")]: {
+    width: theme.spacing(15),
+    textAlign: "right",
+    // color: "white",
+  },
   ...theme.typography.subtitle1,
-  textAlign: "center",
-  letterSpacing: "0.015em",
+  textAlign: "left",
+  letterSpacing: "0.025em",
+  // display:'none'
 }));
 
 const TextFieldInput = styled(TextField, {
@@ -55,7 +63,7 @@ const TextFieldInput = styled(TextField, {
   "& .MuiInputBase-root": {
     borderRadius: 5,
     fontWeight: 300,
-    boxSizing:'border-box',
+    boxSizing: "border-box",
     border: "1px solid #ced4da",
     // padding: theme.spacing(0.5),
   },
